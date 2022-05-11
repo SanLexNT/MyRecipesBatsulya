@@ -1,0 +1,57 @@
+﻿<Window x:Class="MyRecipesBatsulya.WindowFolder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyRecipesBatsulya.WindowFolder"
+        mc:Ignorable="d"
+        Title="Мои рецепты" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="400" MinWidth="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="Black"
+              Grid.Column="1"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Style="{DynamicResource ImageLogoStyle}"/>
+            <Grid Grid.Row="1"
+                  Background="{DynamicResource MainPink}">
+                <StackPanel>
+                    <Button x:Name="BtnDish"
+                        Content="Блюда"
+                        Click="BtnDish_Click"/>
+                    <Button x:Name="BtnIngredients"
+                            Content="Ингредиенты"
+                            Click="BtnIngredients_Click"/>
+                </StackPanel>
+                <Button x:Name="BtnExit"
+                        Content="Выход"
+                        VerticalAlignment="Bottom"
+                        Click="BtnExit_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Style="{DynamicResource LabelLogoStyle}"
+                   Content="{Binding ElementName=MainFrame, Path=Content.Title}"/>
+            <Frame Grid.Row="1"
+                   x:Name="MainFrame"
+                   Margin="10"
+                   NavigationUIVisibility="Hidden"/>
+            <Grid Background="{DynamicResource MainOrange}"
+                  Height="15" VerticalAlignment="Bottom"
+                  Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>
