@@ -112,6 +112,9 @@
     <Compile Include="PageFolder\AddIngredientPage.xaml.cs">
       <DependentUpon>AddIngredientPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageFolder\EditIngredientPage.xaml.cs">
+      <DependentUpon>EditIngredientPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFolder\ListDishPage.xaml.cs">
       <DependentUpon>ListDishPage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="PageFolder\AddIngredientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFolder\EditIngredientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

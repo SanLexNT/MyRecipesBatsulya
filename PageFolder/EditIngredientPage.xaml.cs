@@ -14,24 +14,22 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MyRecipesBatsulya.DataFolder;
 using MyRecipesBatsulya.ClassFolder;
-using System.Threading;
 
 namespace MyRecipesBatsulya.PageFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddIngredientPage.xaml
+    /// Логика взаимодействия для EditIngredientPage.xaml
     /// </summary>
-    public partial class AddIngredientPage : Page
+    public partial class EditIngredientPage : Page
     {
-        Ingredient ingredient = new Ingredient();
-
-        public AddIngredientPage()
+        public EditIngredientPage(Ingredient ingredient)
         {
             InitializeComponent();
             UnitCb.ItemsSource = DBEntities.GetContext().Unit.ToList();
+            DataContext = ingredient;
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(NameTb.Text))
             {
@@ -58,29 +56,14 @@ namespace MyRecipesBatsulya.PageFolder
             {
                 try
                 {
-                    AddIngredient();
-                    MessageBoxClass.InfoMessageBox("Ингредиент добавлен");
+                    DBEntities.GetContext().SaveChanges();
+                    MessageBoxClass.InfoMessageBox("Ингредиент изменен");
                 }
                 catch (Exception ex)
                 {
                     MessageBoxClass.ErrorMessageBox(ex);
                 }
             }
-        }
-        private void AddIngredient()
-        {
-
-            var addIngredient = new Ingredient()
-            {
-               Name = NameTb.Text,
-               Cost = Decimal.Parse(PriceTb.Text),
-               CostForCount = Double.Parse(ForCountTb.Text),
-               UnitId = int.Parse(UnitCb.SelectedValue.ToString()),
-               AvailableCount = Double.Parse(QuantityTb.Text)
-            };
-            DBEntities.GetContext().Ingredient.Add(addIngredient);
-            DBEntities.GetContext().SaveChanges();
-            ingredient.Id = addIngredient.Id;
         }
     }
 }

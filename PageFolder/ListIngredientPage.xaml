@@ -16,6 +16,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="LblTotalQuantity"
                Content="Всего элементов"
+               HorizontalAlignment="Left"
                Style="{DynamicResource LabelStyle}"/>
         <Label x:Name="LblTotalSum"
                Content="Запасов в холодильнике"

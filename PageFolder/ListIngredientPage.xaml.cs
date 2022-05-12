@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyRecipesBatsulya.ClassFolder;
 
 namespace MyRecipesBatsulya.PageFolder
 {
@@ -65,12 +66,33 @@ namespace MyRecipesBatsulya.PageFolder
 
         private void LinkEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            Ingredient ingredient = DgIngredient.SelectedItem as Ingredient;
+            if(ingredient == null)
+            {
+                MessageBoxClass.ErrorMessageBox("Ингредиент не выбран!");
+            }
+            else
+                NavigationService.Navigate(new EditIngredientPage(ingredient));
         }
 
         private void LinkDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            Ingredient ingredient = DgIngredient.SelectedItem as Ingredient;
+            if(ingredient == null)
+            {
+                MessageBoxClass.ErrorMessageBox("Ингредиент не выбран!");
+            }
+            else
+            {
+                if(MessageBoxClass.QuestuonMessageBox
+                    ("Вы действительо хотите удалить ингредиент?"))
+                {
+                    DBEntities.GetContext().Ingredient.Remove(ingredient);
+                    DBEntities.GetContext().SaveChanges();
+                    MessageBoxClass.InfoMessageBox("Игредиент удален");
+                    RefreshData();
+                }
+            }
         }
 
         private void BtnFirstPage_Click(object sender, RoutedEventArgs e)
