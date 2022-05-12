@@ -44,6 +44,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Style="{DynamicResource LabelLogoStyle}"
+                   HorizontalAlignment="Left"
                    Content="{Binding ElementName=MainFrame, Path=Content.Title}"/>
             <Frame Grid.Row="1"
                    x:Name="MainFrame"

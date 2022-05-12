@@ -91,8 +91,14 @@ namespace MyRecipesBatsulya.PageFolder
                     DBEntities.GetContext().SaveChanges();
                     MessageBoxClass.InfoMessageBox("Игредиент удален");
                     RefreshData();
+                    if(DgIngredient.Items.Count <= 0)
+                    {
+                        currentPage--;
+                        RefreshData();
+                    }
                 }
             }
+            
         }
 
         private void BtnFirstPage_Click(object sender, RoutedEventArgs e)
