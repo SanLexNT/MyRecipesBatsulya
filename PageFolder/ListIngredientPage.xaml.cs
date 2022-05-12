@@ -85,6 +85,11 @@ namespace MyRecipesBatsulya.PageFolder
             RefreshData();
         }
 
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddIngredientPage());
+        }
+
         private void BtnNextPage_Click(object sender, RoutedEventArgs e)
         {
             currentPage++;

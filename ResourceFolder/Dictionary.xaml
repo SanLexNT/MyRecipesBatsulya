@@ -29,6 +29,7 @@
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
         <Setter Property="FontFamily" Value="Arial"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
@@ -37,6 +38,26 @@
            BasedOn="{StaticResource LabelStyle}">
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MainOrange}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+    <Style TargetType="ComboBox">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MainOrange}"/>
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
     
     

@@ -21,8 +21,6 @@
             <RowDefinition Height="10"/>
             <RowDefinition/>
             <RowDefinition Height="10"/>
-            <RowDefinition/>
-            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Label Content="Название:"
                Style="{DynamicResource LabelStyle}"/>
@@ -31,15 +29,31 @@
                Grid.Row="2"/>
         <Label Content="Юнит:"
                Style="{DynamicResource LabelStyle}"
-               Grid.Row="4"/>
+               Grid.Column="2"
+               Grid.Row="2"/>
         <Label Content="Цена за 1:"
                Style="{DynamicResource LabelStyle}"
                Grid.Column="2"/>
-        <Label Content="Общая цена:"
-               Style="{DynamicResource LabelStyle}"
-               Grid.Column="2"
-               Grid.Row="2"/>
+        
         <TextBox x:Name="NameTb"
                  Grid.Column="1"/>
+        <TextBox x:Name="QuantityTb"
+                 Grid.Column="1"
+                 Grid.Row="2"/>
+        <ComboBox x:Name="UnitCb"
+                  Grid.Column="3"
+                  Grid.Row="2"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="Id"/>
+        <TextBox x:Name="PriceForCountTb"
+                 Grid.Column="3"/>
+        <Button x:Name="AddBtn"
+                Content="Добавить"
+                Grid.Column="1"
+                Grid.Row="4"
+                Height="50"
+                FontSize="20"
+                Grid.ColumnSpan="2"
+                Click="AddBtn_Click"/>
     </Grid>
 </Page>
