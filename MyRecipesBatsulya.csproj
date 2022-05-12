@@ -84,6 +84,7 @@
     <Compile Include="DataFolder\Ingredient.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataFolder\IngredientClass.cs" />
     <Compile Include="DataFolder\IngredientOfStage.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
@@ -107,6 +108,9 @@
     </Compile>
     <Compile Include="DataFolder\Unit.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageFolder\AddIngredientPage.xaml.cs">
+      <DependentUpon>AddIngredientPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageFolder\ListDishPage.xaml.cs">
       <DependentUpon>ListDishPage.xaml</DependentUpon>
@@ -162,6 +166,10 @@
     <Resource Include="nyam-nyam.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="PageFolder\AddIngredientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFolder\ListDishPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="MyRecipesBatsulya.PageFolder.AddIngredientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyRecipesBatsulya.PageFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Добавление ингредиента">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Label Content="Название:"
+               Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Количество:"
+               Style="{DynamicResource LabelStyle}"
+               Grid.Row="2"/>
+        <Label Content="Юнит:"
+               Style="{DynamicResource LabelStyle}"
+               Grid.Row="4"/>
+        <Label Content="Цена за 1:"
+               Style="{DynamicResource LabelStyle}"
+               Grid.Column="2"/>
+        <Label Content="Общая цена:"
+               Style="{DynamicResource LabelStyle}"
+               Grid.Column="2"
+               Grid.Row="2"/>
+        <TextBox x:Name="NameTb"
+                 Grid.Column="1"/>
+    </Grid>
+</Page>

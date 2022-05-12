@@ -32,6 +32,11 @@
                                     Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Цена"
                                     Width="*">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background" Value="{Binding PriceColor}"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat="{}{0:N0} руб. за {1} {2}">
                             <Binding Path="Cost"/>
