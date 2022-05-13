@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyRecipesBatsulya.DataFolder;
 
 namespace MyRecipesBatsulya.PageFolder
 {
@@ -23,6 +24,23 @@ namespace MyRecipesBatsulya.PageFolder
         public ListDishPage()
         {
             InitializeComponent();
+            LvDishes.ItemsSource =
+                DBEntities.GetContext().Dish.ToList();
+        }
+
+        private void CbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

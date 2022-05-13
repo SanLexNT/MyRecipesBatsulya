@@ -81,6 +81,7 @@
     <Compile Include="DataFolder\Dish.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataFolder\DishClass.cs" />
     <Compile Include="DataFolder\Ingredient.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
