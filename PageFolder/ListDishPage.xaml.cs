@@ -30,16 +30,11 @@ namespace MyRecipesBatsulya.PageFolder
 
         private void CbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(CbCategory.SelectedItem is Category category))
-            {
-                return;
-            }
-            else
-            {
+            if (CbCategory.SelectedItem is Category category)
                 LvDishes.ItemsSource =
                         DBEntities.GetContext().Dish.ToList()
                         .Where(d => d.Category.Name == category.Name);
-            }
+            else return;
         }
 
         private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
